@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConnectionStringSitting
 {
-    public class ConnectionString
+    public class ConnectionStringSitting
     {
+        public static string ConnectionString= "Server=.;Database=Contacts;User Id=sa;Password=123456;";
     }
 }
