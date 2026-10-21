@@ -72,6 +72,12 @@ namespace Business_Layer
             return (this._ID != -1);
         }
 
+        private bool _UpdateContact()
+        {
+            return DataAccess.UpdateContact(this.ID, this._FirstName, this._LastName, this._Email, this._Phone, this._Address,
+                this._CountryID, this._DateOfBirth, this._ImagePath);
+        }
+
         private clsContact(int ID, string FirstName, string LastName,
              string Email, string Phone, string Address, 
              int CountryID, DateTime DateOfBirth, string ImagePath)
@@ -129,9 +135,13 @@ namespace Business_Layer
                     else
                         return false;
 
+                case enMode.Update:
+                    return _UpdateContact();
+                    
+
             }
 
-            return true;
+            return false;
         }
     }
 }

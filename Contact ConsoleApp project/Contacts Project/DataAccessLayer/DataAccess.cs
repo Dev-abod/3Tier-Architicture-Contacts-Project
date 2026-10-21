@@ -36,7 +36,7 @@ namespace DataAccessLayer
                     Address = (string)reader["Address"];
                     DateOfBirth = (DateTime)reader["DateOfBirth"];
                     CountryID = (int)reader["CountryID"];
-                    if (reader["ImagePath"] != null)
+                    if (reader["ImagePath"] != DBNull.Value)
                         ImagePath = (string)reader["ImagePath"];
                     else
                         ImagePath = "";
@@ -77,7 +77,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@CountryID", CountryID);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
 
-            if(ImagePath != "")
+            if (ImagePath != "")
                 command.Parameters.AddWithValue("@ImagePath", ImagePath);
             else
                 command.Parameters.AddWithValue("@ImagePath", System.DBNull.Value);
@@ -88,14 +88,14 @@ namespace DataAccessLayer
 
                 object Result = command.ExecuteNonQuery();
 
-                if (Result != null && int.TryParse(Result.ToString(),out int  insertedID))
+                if (Result != null && int.TryParse(Result.ToString(), out int insertedID))
                     ContactID = insertedID;
-                
+
 
             }
             catch (Exception ex)
             {
-                
+
             }
             finally
             {
@@ -103,6 +103,59 @@ namespace DataAccessLayer
             }
 
             return ContactID;
+        }
+
+        public static bool UpdateContact(int ID, string FirstName, string LastName, string Email,
+             string Phone, string Address, int CountryID, DateTime DateOfBirth, string ImagePath)
+        {
+            int RowAffected = 0;
+
+            SqlConnection connection = new SqlConnection(ConnectionString.Connection);
+
+            string query = @"Update Contacts
+                set FirstName = @FirstName,
+                    LastName = @LastName,
+                    Email = @Email,
+                    Phone = @Phone,
+                    Address=@Address,
+                    CountryID=@CountryID,
+                    DateOfBirth = @DateOfBirth,
+                    ImagePath =@ImagePath
+                    Where ContactID =@ContactID";
+
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ContactID", ID);
+            command.Parameters.AddWithValue("@FirstName", FirstName);
+            command.Parameters.AddWithValue("@LastName", LastName);
+            command.Parameters.AddWithValue("@Email", Email);
+            command.Parameters.AddWithValue("@Phone", Phone);
+            command.Parameters.AddWithValue("@Address", Address);
+            command.Parameters.AddWithValue("@CountryID", CountryID);
+            command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+            if (ImagePath != "")
+                command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            else
+                command.Parameters.AddWithValue("@ImagePath", System.DBNull.Value);
+
+            try
+            {
+                connection.Open();
+                RowAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return false;
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+
+            return (RowAffected > 0);
         }
     }
 }

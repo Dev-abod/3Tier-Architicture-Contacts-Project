@@ -43,10 +43,34 @@ namespace Contacts_Project
             }
 
         }
+
+        public static void Update(int ID)
+        {
+            clsContact Contact = clsContact.Find(ID);
+
+            if (Contact != null)
+            {
+                Contact.FirstName = "maha";
+                Contact.LastName = "awad";
+                Contact.Email = "asem@gmail.com";
+                Contact.Phone = "77777777777";
+                Contact.Address = "zip123";
+                Contact.DateOfBirth = new DateTime(1977,11,6,10,30,0); 
+                Contact.CountryID = 1;
+                Contact.ImagePath = "";
+
+                if (Contact.Save())
+                {
+                    Console.WriteLine("Update successfully");
+                }
+            }
+            else
+                Console.WriteLine("Not Found");
+        }
         static void Main(string[] args)
         {
             //AddNewContact();
-            Find(2);
+            Update(1);
 
 
             Console.ReadKey();
