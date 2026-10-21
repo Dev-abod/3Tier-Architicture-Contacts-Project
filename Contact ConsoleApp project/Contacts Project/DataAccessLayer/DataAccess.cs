@@ -8,8 +8,8 @@ namespace DataAccessLayer
     public class DataAccess
     {
         public static bool GetContactInfoById(int ID,ref string FirstName, ref string LastName,
-            ref string Email, ref string Phone, ref string Address, ref DateTime DateOfBirth ,
-            ref int CountryID, ref string ImagePath)
+            ref string Email, ref string Phone, ref string Address, 
+            ref int CountryID, ref DateTime DateOfBirth, ref string ImagePath)
         {
             bool isFound = false;
 

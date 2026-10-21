@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DataAccessLayer;
 
 namespace Business_Layer
 {
@@ -65,10 +62,10 @@ namespace Business_Layer
             get { return _ImagePath; }
             set { _ImagePath = value; }
         }
-      
-        private clsContact(int ID, string FirstName,  string LastName,
-             string Email,  string Phone,  string Address,  DateTime DateOfBirth,
-             int CountryID,  string ImagePath)
+
+        private clsContact(int ID, string FirstName, string LastName,
+             string Email, string Phone, string Address, 
+             int CountryID, DateTime DateOfBirth, string ImagePath)
         {
             this._FirstName = FirstName;
             this._LastName = LastName;
@@ -78,6 +75,18 @@ namespace Business_Layer
             this._DateOfBirth = DateOfBirth;
             this._CountryID = CountryID;
             this._ImagePath = ImagePath;
+        }
+
+        public static clsContact Find(int ID)
+        {
+            string FirstName="", LastName = "", ImagePath = "", Email = "", Phone = "", Address = "";
+            DateTime DateOfBirth = DateTime.Now;
+            int CountryID = -1;
+            if (DataAccess.GetContactInfoById(ID, ref FirstName, ref LastName, ref Email, ref Phone, ref Address
+                , ref CountryID, ref DateOfBirth, ref ImagePath))
+                return new clsContact(ID, FirstName, LastName, Email, Phone, Address, CountryID, DateOfBirth, ImagePath);
+            else
+                return null;
         }
 
 
