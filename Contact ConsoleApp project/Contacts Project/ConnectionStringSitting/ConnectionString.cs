@@ -8,6 +8,6 @@ namespace ConnectionStringSitting
 {
     public class ConnectionString
     {
-        public static string Connection= "Server=.;Database=Contacts;User Id=sa;Password=123456;";
+        public static string Connection= "Server=.;Database=ContactsDB;User Id=sa;Password=123456;";
     }
 }

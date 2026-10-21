@@ -1,0 +1,15 @@
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\bin\Debug\Contacts Project.exe.config
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\bin\Debug\Contacts Project.exe
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\bin\Debug\Contacts Project.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\bin\Debug\Business Layer.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\bin\Debug\DataAccessLayer.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\bin\Debug\ConnectionStringSitting.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\bin\Debug\Business Layer.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\bin\Debug\DataAccessLayer.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\bin\Debug\ConnectionStringSitting.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\obj\Debug\PresentationLayer.csproj.AssemblyReference.cache
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\obj\Debug\PresentationLayer.csproj.SuggestedBindingRedirects.cache
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\obj\Debug\PresentationLayer.csproj.CoreCompileInputs.cache
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\obj\Debug\PresentationLayer.csproj.CopyComplete
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\obj\Debug\Contacts Project.exe
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Contacts Project\obj\Debug\Contacts Project.pdb

@@ -1,0 +1,6 @@
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\ConnectionStringSitting\bin\Debug\ConnectionStringSitting.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\ConnectionStringSitting\bin\Debug\ConnectionStringSitting.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\ConnectionStringSitting\obj\Debug\ConnectionStringSitting.csproj.AssemblyReference.cache
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\ConnectionStringSitting\obj\Debug\ConnectionStringSitting.csproj.CoreCompileInputs.cache
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\ConnectionStringSitting\obj\Debug\ConnectionStringSitting.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\ConnectionStringSitting\obj\Debug\ConnectionStringSitting.pdb

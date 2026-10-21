@@ -1,0 +1,9 @@
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\DataAccessLayer\bin\Debug\ConnectionStringSitting.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\DataAccessLayer\bin\Debug\ConnectionStringSitting.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

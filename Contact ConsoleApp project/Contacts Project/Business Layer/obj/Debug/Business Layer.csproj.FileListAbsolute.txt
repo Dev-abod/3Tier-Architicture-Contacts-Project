@@ -1,0 +1,11 @@
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\bin\Debug\Business Layer.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\bin\Debug\Business Layer.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\bin\Debug\DataAccessLayer.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\bin\Debug\ConnectionStringSitting.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\bin\Debug\DataAccessLayer.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\bin\Debug\ConnectionStringSitting.pdb
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\obj\Debug\Business Layer.csproj.AssemblyReference.cache
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\obj\Debug\Business Layer.csproj.CoreCompileInputs.cache
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\obj\Debug\Business Layer.csproj.CopyComplete
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\obj\Debug\Business Layer.dll
+D:\My_Projects\3Tier Archititure\Contact ConsoleApp project\Contacts Project\Business Layer\obj\Debug\Business Layer.pdb
