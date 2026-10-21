@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Contacts_Project
 {
-    internal class Program
+    public class Presentation
     {
         static void Main(string[] args)
         {
