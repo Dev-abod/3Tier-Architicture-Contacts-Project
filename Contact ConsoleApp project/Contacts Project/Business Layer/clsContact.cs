@@ -5,6 +5,8 @@ namespace Business_Layer
 {
     public class clsContact
     {
+        public enum enMode { Update =1 , AddNew =2};
+        enMode Mode;
 
         private int _ID;
         private string _FirstName;
@@ -20,13 +22,11 @@ namespace Business_Layer
         {
             get { return _ID; }
         }
-
         public string FirstName
         {
             get { return _FirstName; }
             set { _FirstName = value; }
         }
-
         public string LastName
         {
             get { return _LastName; }
@@ -63,6 +63,15 @@ namespace Business_Layer
             set { _ImagePath = value; }
         }
 
+
+        private bool _AddNewContact()
+        {
+            this._ID = DataAccess.AddNewContact(_FirstName, _LastName,_Email, _Phone, _Address,
+                _CountryID, _DateOfBirth, _ImagePath);
+
+            return (this._ID != -1);
+        }
+
         private clsContact(int ID, string FirstName, string LastName,
              string Email, string Phone, string Address, 
              int CountryID, DateTime DateOfBirth, string ImagePath)
@@ -75,6 +84,23 @@ namespace Business_Layer
             this._DateOfBirth = DateOfBirth;
             this._CountryID = CountryID;
             this._ImagePath = ImagePath;
+
+            Mode = enMode.Update;
+        }
+
+        public clsContact()
+        {
+            this._FirstName = FirstName;
+            this._LastName = LastName;
+            this._Email = Email;
+            this._Phone = Phone;
+            this._Address = Address;
+            this._DateOfBirth = DateOfBirth;
+            this._CountryID = CountryID;
+            this._ImagePath = ImagePath;
+
+            Mode = enMode.AddNew;
+
         }
 
         public static clsContact Find(int ID)
@@ -90,8 +116,22 @@ namespace Business_Layer
         }
 
 
+        public bool Save()
+        {
+            switch(Mode)
+            {
+                case enMode.AddNew:
+                    if (_AddNewContact())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+                    }
+                    else
+                        return false;
 
+            }
 
-
+            return true;
+        }
     }
 }

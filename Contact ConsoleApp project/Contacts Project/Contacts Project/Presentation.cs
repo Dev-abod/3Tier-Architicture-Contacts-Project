@@ -23,9 +23,31 @@ namespace Contacts_Project
             else
                 Console.WriteLine("Not Found");
         }
+
+        public static void AddNewContact()
+        {
+            clsContact contact = new clsContact();
+
+            contact.FirstName = "Abdullah";
+            contact.LastName = "Abdulhamid";
+            contact.Email = "ab3awd@gmail.com";
+            contact.Phone = "77777777777";
+            contact.Address = "zip123";
+            contact.DateOfBirth = DateTime.Now ;
+            contact.CountryID = 1;
+            contact.ImagePath = "";
+
+            if(contact.Save())
+            {
+                Console.WriteLine("Add successfully");
+            }
+
+        }
         static void Main(string[] args)
         {
-            Find(1);
+            //AddNewContact();
+            Find(2);
+
 
             Console.ReadKey();
         }
