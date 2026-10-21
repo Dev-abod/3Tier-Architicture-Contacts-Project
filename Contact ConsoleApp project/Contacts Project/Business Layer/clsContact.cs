@@ -66,10 +66,23 @@ namespace Business_Layer
             set { _ImagePath = value; }
         }
       
+        private clsContact(int ID, string FirstName,  string LastName,
+             string Email,  string Phone,  string Address,  DateTime DateOfBirth,
+             int CountryID,  string ImagePath)
+        {
+            this._FirstName = FirstName;
+            this._LastName = LastName;
+            this._Email = Email;
+            this._Phone = Phone;
+            this._Address = Address;
+            this._DateOfBirth = DateOfBirth;
+            this._CountryID = CountryID;
+            this._ImagePath = ImagePath;
+        }
 
 
 
 
-        
+
     }
 }
