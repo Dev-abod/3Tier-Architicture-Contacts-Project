@@ -44,5 +44,11 @@
     <Compile Include="DataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectionStringSitting\ConnectionStringSitting.csproj">
+      <Project>{b703bb0f-f463-4a44-a8fa-84f36af14cf9}</Project>
+      <Name>ConnectionStringSitting</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
