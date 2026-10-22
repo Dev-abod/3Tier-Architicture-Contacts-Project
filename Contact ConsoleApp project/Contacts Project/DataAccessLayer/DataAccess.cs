@@ -157,5 +157,96 @@ namespace DataAccessLayer
 
             return (RowAffected > 0);
         }
+
+        public static bool Delete(int ID)
+        {
+            int rowAffected = 0;
+
+            SqlConnection connection = new SqlConnection(ConnectionString.Connection);
+            string query = "DELETE FROM Contacts WHERE ContactID = @ContactID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ContactID", ID);
+
+            try
+            {
+
+                connection.Open();
+                rowAffected = command.ExecuteNonQuery();
+
+                
+
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (rowAffected>0);
+        }
+
+        public static DataTable GetAllContacts()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(ConnectionString.Connection);
+            string query = "SELECT * FROM Contacts ";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public static bool isContactExist(int ID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(ConnectionString.Connection);
+
+            string query = "SELECT Found=1 FROM Contacts Where ContactID = @ContactID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ContactID", ID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                isFound = reader.HasRows;
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
+
     }
 }

@@ -67,13 +67,43 @@ namespace Contacts_Project
             else
                 Console.WriteLine("Not Found");
         }
+
+        public static void Delete(int ID)
+        {
+            if(clsContact.Delete(ID))
+            {
+                Console.WriteLine("Deleted");
+            }
+
+        }
+
+        public static void ListContacts()
+        {
+            DataTable datatable = clsContact.GetAllContacts();
+
+            foreach(DataRow row in datatable.Rows)
+            {
+                Console.WriteLine($"{row["ContactID"]}, {row["FirstName"]}, {row["LastName"]}");
+            }
+        }
+
+        public static void isContactExist(int ID)
+        {
+            if (clsContact.isContactExist(ID))
+                Console.WriteLine("Exist");
+            else
+                Console.WriteLine("no Exist");
+
+        }
         static void Main(string[] args)
         {
             //AddNewContact();
-            Update(1);
-
+            //Delete(15);
+            isContactExist(1);
 
             Console.ReadKey();
         }
+
+        
     }
 }

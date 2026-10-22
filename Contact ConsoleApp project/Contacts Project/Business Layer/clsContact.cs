@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using DataAccessLayer;
 
 namespace Business_Layer
@@ -121,6 +122,15 @@ namespace Business_Layer
                 return null;
         }
 
+        public static bool Delete(int ID)
+        {
+            return DataAccess.Delete(ID);
+        }
+
+        public static DataTable GetAllContacts()
+        {
+            return DataAccess.GetAllContacts();
+        }
 
         public bool Save()
         {
@@ -142,6 +152,11 @@ namespace Business_Layer
             }
 
             return false;
+        }
+
+        public static bool isContactExist(int ID)
+        {
+            return DataAccess.isContactExist(ID);
         }
     }
 }
