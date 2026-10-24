@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+using DataAccessLayer;
 
 namespace Business_Layer
 {
-    internal class clsCountry
+    public class clsCountry
     {
 
     }

@@ -4,15 +4,16 @@ using Business_Layer;
 
 namespace Contacts_Project
 {
-    public class Presentation
+
+    public class clsPresentationcontact
     {
         public static void Find(int ID)
-         {
+        {
             clsContact Contact = clsContact.Find(ID);
 
             if (Contact != null)
             {
-                Console.WriteLine(Contact.FirstName + " " +Contact.LastName);
+                Console.WriteLine(Contact.FirstName + " " + Contact.LastName);
                 Console.WriteLine(Contact.Email);
                 Console.WriteLine(Contact.Phone);
                 Console.WriteLine(Contact.Address);
@@ -33,11 +34,11 @@ namespace Contacts_Project
             contact.Email = "ab3awd@gmail.com";
             contact.Phone = "77777777777";
             contact.Address = "zip123";
-            contact.DateOfBirth = DateTime.Now ;
+            contact.DateOfBirth = DateTime.Now;
             contact.CountryID = 1;
             contact.ImagePath = "";
 
-            if(contact.Save())
+            if (contact.Save())
             {
                 Console.WriteLine("Add successfully");
             }
@@ -55,7 +56,7 @@ namespace Contacts_Project
                 Contact.Email = "asem@gmail.com";
                 Contact.Phone = "77777777777";
                 Contact.Address = "zip123";
-                Contact.DateOfBirth = new DateTime(1977,11,6,10,30,0); 
+                Contact.DateOfBirth = new DateTime(1977, 11, 6, 10, 30, 0);
                 Contact.CountryID = 1;
                 Contact.ImagePath = "";
 
@@ -70,7 +71,7 @@ namespace Contacts_Project
 
         public static void Delete(int ID)
         {
-            if(clsContact.Delete(ID))
+            if (clsContact.Delete(ID))
             {
                 Console.WriteLine("Deleted");
             }
@@ -81,7 +82,7 @@ namespace Contacts_Project
         {
             DataTable datatable = clsContact.GetAllContacts();
 
-            foreach(DataRow row in datatable.Rows)
+            foreach (DataRow row in datatable.Rows)
             {
                 Console.WriteLine($"{row["ContactID"]}, {row["FirstName"]}, {row["LastName"]}");
             }
@@ -95,12 +96,16 @@ namespace Contacts_Project
                 Console.WriteLine("no Exist");
 
         }
+    }
+
+   
+    public class Presentation
+    {
+        
         static void Main(string[] args)
         {
-            //AddNewContact();
-            //Delete(15);
-            isContactExist(1);
 
+            //clsPresentationcontact.AddNewContact();
             Console.ReadKey();
         }
 
