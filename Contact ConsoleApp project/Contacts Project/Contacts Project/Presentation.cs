@@ -121,6 +121,14 @@ namespace Contacts_Project
                 Console.WriteLine("Not Found");
 
         }
+
+        public static void Delete(int ID)
+        {
+            if (clsCountry.Delete(ID))
+                Console.WriteLine("Done Deleted");
+            else
+                Console.WriteLine("Not Done Delete");
+        }
     }
 
 
@@ -130,7 +138,7 @@ namespace Contacts_Project
         static void Main(string[] args)
         {
             clsPresentationCountry.Find("United Kingdom");
-            clsPresentationCountry.Find(10);
+            clsPresentationCountry.Delete(2);
 
             //clsPresentationContact.AddNewContact();
             Console.ReadKey();

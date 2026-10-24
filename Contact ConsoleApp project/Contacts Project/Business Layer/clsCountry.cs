@@ -52,6 +52,10 @@ namespace Business_Layer
                 return null;
         }
 
+        public static bool Delete(int ID)
+        {
+            return clsCountryData.Delete(ID);
+        }
 
     }
 

@@ -72,6 +72,30 @@ namespace DataAccessLayer
             return isFound;
         }
 
+        public static bool Delete(int ID)
+        {
+            int rowAffected = 0;
+
+            SqlConnection connection = new SqlConnection(ConnectionString.Connection);
+            string query = "DELETE FROM Countries WHERE CountryID = @CountryID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CountryID", ID);
+
+            try
+            {
+                connection.Open();
+                rowAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowAffected > 0);
+        }
     }
 
 }
