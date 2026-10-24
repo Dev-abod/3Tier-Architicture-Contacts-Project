@@ -32,7 +32,7 @@ namespace Business_Layer
             this._ID = ID;
             this._CountryName = CountryName;
         }
-        public static clsCountry FindCountryByID(int ID)
+        public static clsCountry Find(int ID)
         {
             string CountryName = "";
 
@@ -42,7 +42,17 @@ namespace Business_Layer
                 return null;
         }
 
+        public static clsCountry Find(string CountryName)
+        {
+            int ID=-1;
 
-}
+            if (clsCountryData.FindCountryByName(ref ID,CountryName))
+                return new clsCountry(ID, CountryName);
+            else
+                return null;
+        }
+
+
+    }
 
 }

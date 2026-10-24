@@ -100,11 +100,22 @@ namespace Contacts_Project
 
     public class clsPresentationCountry
     {
-        public static void FindCountryByID(int ID)
+        public static void Find(int ID)
         {
-            clsCountry country = clsCountry.FindCountryByID(ID);
+            clsCountry country = clsCountry.Find(ID);
 
             if(country != null)
+                Console.WriteLine($"ID :{country.ID}, CountryName :{country.CountryName}");
+            else
+                Console.WriteLine("Not Found");
+
+        }
+
+        public static void Find(string CountryName)
+        {
+            clsCountry country = clsCountry.Find(CountryName);
+
+            if (country != null)
                 Console.WriteLine($"ID :{country.ID}, CountryName :{country.CountryName}");
             else
                 Console.WriteLine("Not Found");
@@ -118,7 +129,9 @@ namespace Contacts_Project
         
         static void Main(string[] args)
         {
-            clsPresentationCountry.FindCountryByID(20);
+            clsPresentationCountry.Find("United Kingdom");
+            clsPresentationCountry.Find(10);
+
             //clsPresentationContact.AddNewContact();
             Console.ReadKey();
         }
