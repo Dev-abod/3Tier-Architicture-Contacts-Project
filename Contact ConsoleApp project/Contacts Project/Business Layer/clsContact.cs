@@ -67,7 +67,7 @@ namespace Business_Layer
 
         private bool _AddNewContact()
         {
-            this._ID = DataAccess.AddNewContact(_FirstName, _LastName,_Email, _Phone, _Address,
+            this._ID = clsContactData.AddNewContact(_FirstName, _LastName,_Email, _Phone, _Address,
                 _CountryID, _DateOfBirth, _ImagePath);
 
             return (this._ID != -1);
@@ -75,7 +75,7 @@ namespace Business_Layer
 
         private bool _UpdateContact()
         {
-            return DataAccess.UpdateContact(this.ID, this._FirstName, this._LastName, this._Email, this._Phone, this._Address,
+            return clsContactData.UpdateContact(this.ID, this._FirstName, this._LastName, this._Email, this._Phone, this._Address,
                 this._CountryID, this._DateOfBirth, this._ImagePath);
         }
 
@@ -115,7 +115,7 @@ namespace Business_Layer
             string FirstName="", LastName = "", ImagePath = "", Email = "", Phone = "", Address = "";
             DateTime DateOfBirth = DateTime.Now;
             int CountryID = -1;
-            if (DataAccess.GetContactInfoById(ID, ref FirstName, ref LastName, ref Email, ref Phone, ref Address
+            if (clsContactData.GetContactInfoById(ID, ref FirstName, ref LastName, ref Email, ref Phone, ref Address
                 , ref CountryID, ref DateOfBirth, ref ImagePath))
                 return new clsContact(ID, FirstName, LastName, Email, Phone, Address, CountryID, DateOfBirth, ImagePath);
             else
@@ -124,12 +124,12 @@ namespace Business_Layer
 
         public static bool Delete(int ID)
         {
-            return DataAccess.Delete(ID);
+            return clsContactData.Delete(ID);
         }
 
         public static DataTable GetAllContacts()
         {
-            return DataAccess.GetAllContacts();
+            return clsContactData.GetAllContacts();
         }
 
         public bool Save()
@@ -156,7 +156,7 @@ namespace Business_Layer
 
         public static bool isContactExist(int ID)
         {
-            return DataAccess.isContactExist(ID);
+            return clsContactData.isContactExist(ID);
         }
 
     }

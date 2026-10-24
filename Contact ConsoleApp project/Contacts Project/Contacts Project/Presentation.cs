@@ -5,7 +5,7 @@ using Business_Layer;
 namespace Contacts_Project
 {
 
-    public class clsPresentationcontact
+    public class clsPresentationContact
     {
         public static void Find(int ID)
         {
@@ -98,15 +98,28 @@ namespace Contacts_Project
         }
     }
 
+    public class clsPresentationCountry
+    {
+        public static void FindCountryByID(int ID)
+        {
+            clsCountry country = clsCountry.FindCountryByID(ID);
 
-   
+            if(country != null)
+                Console.WriteLine($"ID :{country.ID}, CountryName :{country.CountryName}");
+            else
+                Console.WriteLine("Not Found");
+
+        }
+    }
+
+
     public class Presentation
     {
         
         static void Main(string[] args)
         {
-
-            //clsPresentationcontact.AddNewContact();
+            clsPresentationCountry.FindCountryByID(20);
+            //clsPresentationContact.AddNewContact();
             Console.ReadKey();
         }
 
