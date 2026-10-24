@@ -129,6 +129,16 @@ namespace Contacts_Project
             else
                 Console.WriteLine("Not Done Delete");
         }
+
+        public static void IsExistCountry(string CountryName)
+        {
+            if (clsCountry.IsExistCountry(CountryName))
+                Console.WriteLine("Country Exist");
+            else
+                Console.WriteLine("Not Country Exist");
+        }
+
+
     }
 
 
@@ -137,8 +147,9 @@ namespace Contacts_Project
         
         static void Main(string[] args)
         {
-            clsPresentationCountry.Find("United Kingdom");
-            clsPresentationCountry.Delete(2);
+            clsPresentationCountry.Find(1);
+
+            clsPresentationCountry.IsExistCountry("United States");
 
             //clsPresentationContact.AddNewContact();
             Console.ReadKey();

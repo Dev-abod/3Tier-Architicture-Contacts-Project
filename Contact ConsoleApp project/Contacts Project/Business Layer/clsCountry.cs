@@ -57,6 +57,13 @@ namespace Business_Layer
             return clsCountryData.Delete(ID);
         }
 
+
+        public static bool IsExistCountry(string CountryName)
+        {
+            return clsCountryData.IsExistCountry(CountryName);
+        }
+        
+
     }
 
 }

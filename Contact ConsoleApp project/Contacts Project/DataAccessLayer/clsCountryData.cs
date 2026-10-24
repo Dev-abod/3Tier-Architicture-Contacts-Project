@@ -96,6 +96,36 @@ namespace DataAccessLayer
 
             return (rowAffected > 0);
         }
+
+        public static bool IsExistCountry(string CountryName)
+        {
+             bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(ConnectionString.Connection);
+            string query = "SELECT Found=1 FROM Countries WHERE CountryName = @CountryName";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CountryName", CountryName);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                isFound = reader.HasRows;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
     }
 
 }
