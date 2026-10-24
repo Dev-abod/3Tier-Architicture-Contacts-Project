@@ -5,7 +5,7 @@ using ConnectionStringSitting;
 
 namespace DataAccessLayer
 {
-    public class DataAccess
+    public class DataAccessContact
     {
         public static bool GetContactInfoById(int ID, ref string FirstName, ref string LastName, ref string Email,
             ref string Phone, ref string Address, ref int CountryID, ref DateTime DateOfBirth,
