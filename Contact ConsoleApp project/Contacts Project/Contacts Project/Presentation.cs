@@ -105,7 +105,7 @@ namespace Contacts_Project
             clsCountry country = clsCountry.Find(ID);
 
             if(country != null)
-                Console.WriteLine($"ID :{country.ID}, CountryName :{country.CountryName}");
+                Console.WriteLine($"ID :{country.ID}, CountryName :{country.CountryName}, Code :{country.Code}, PhoneCode :{country.PhoneCode}");
             else
                 Console.WriteLine("Not Found");
 
@@ -116,7 +116,7 @@ namespace Contacts_Project
             clsCountry country = clsCountry.Find(CountryName);
 
             if (country != null)
-                Console.WriteLine($"ID :{country.ID}, CountryName :{country.CountryName}");
+                Console.WriteLine($"ID :{country.ID}, CountryName :{country.CountryName}, Code :{country.Code}, PhoneCode :{country.PhoneCode}");
             else
                 Console.WriteLine("Not Found");
 
@@ -145,7 +145,9 @@ namespace Contacts_Project
             if(country != null)
             {
                 country.CountryName = "sana'a";
-                if(country.Save())
+                country.Code = "aaa";
+                country.PhoneCode = "778";
+                if (country.Save())
                 {
                     Console.WriteLine("Done Update");
                 }
@@ -159,8 +161,9 @@ namespace Contacts_Project
         {
             clsCountry country = new clsCountry();
 
-            country.CountryName = "YEMEN";
-
+            country.CountryName = "aman";
+            country.Code = "aman77";
+            country.PhoneCode = "447an";
 
             if (country.Save())
             {
@@ -177,9 +180,9 @@ namespace Contacts_Project
         
         static void Main(string[] args)
         {
-            clsPresentationCountry.Find(6);
+            //clsPresentationCountry.Update(1);
 
-            //clsPresentationCountry.Update(6);
+            clsPresentationCountry.Find(1);
 
             Console.ReadKey();
         }
