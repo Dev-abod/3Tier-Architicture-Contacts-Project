@@ -6,6 +6,8 @@ namespace Business_Layer
 {
     public class clsCountry
     {
+        enum enMode { Update =1,AddNew=2};
+        enMode Mode;
         private int _ID;
         private string _CountryName;
 
@@ -25,12 +27,23 @@ namespace Business_Layer
         {
             this._ID = -1;
             this._CountryName = "";
+
+            Mode = enMode.AddNew;
         }
 
         private clsCountry(int ID,string CountryName)
         {
             this._ID = ID;
             this._CountryName = CountryName;
+
+            Mode = enMode.Update;
+        }
+
+        private bool _AddNewCountry()
+        {
+            this._ID = clsCountryData.AddNewCountry(this.CountryName);
+
+            return (this._ID != -1);
         }
         public static clsCountry Find(int ID)
         {
@@ -63,7 +76,25 @@ namespace Business_Layer
             return clsCountryData.IsExistCountry(CountryName);
         }
         
+        public bool Save()
+        {
+            switch (Mode)
+            {
+                case enMode.AddNew:
+                    if(_AddNewCountry())
+                    {
+                        Mode = enMode.AddNew;
+                        return true;
+                    }
+                    break;
+                case enMode.Update:
+                    break;
+                default:
+                    break;
+            }
 
+            return false;
+        }
     }
 
 }

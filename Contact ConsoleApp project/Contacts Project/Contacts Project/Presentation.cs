@@ -138,6 +138,19 @@ namespace Contacts_Project
                 Console.WriteLine("Not Country Exist");
         }
 
+        public static void AddNewContact()
+        {
+            clsCountry country = new clsCountry();
+
+            country.CountryName = "YEMEN";
+            
+
+            if (country.Save())
+            {
+                Console.WriteLine("Add successfully");
+            }
+
+        }
 
     }
 
@@ -147,9 +160,9 @@ namespace Contacts_Project
         
         static void Main(string[] args)
         {
-            clsPresentationCountry.Find(1);
+            clsPresentationCountry.Find(6);
 
-            clsPresentationCountry.IsExistCountry("United States");
+            //clsPresentationCountry.AddNewContact();
 
             //clsPresentationContact.AddNewContact();
             Console.ReadKey();

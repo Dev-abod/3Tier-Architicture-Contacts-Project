@@ -135,7 +135,7 @@ namespace DataAccessLayer
 
             string query = @"INSERT INTO
                              Countries(CountryName)
-                             VALUE(@CountryName);
+                             VALUES(@CountryName);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
