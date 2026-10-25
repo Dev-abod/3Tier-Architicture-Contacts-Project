@@ -167,7 +167,7 @@ namespace DataAccessLayer
             SqlConnection connection = new SqlConnection(ConnectionString.Connection);
 
 
-            string query = @"Update Value Countries
+            string query = @"Update Countries
                              SET CountryName = @CountryName
                              WHERE CountryID = @CountryID";              
             SqlCommand command = new SqlCommand(query, connection);

@@ -45,6 +45,11 @@ namespace Business_Layer
 
             return (this._ID != -1);
         }
+
+        private bool _UpdateCountry()
+        {
+            return clsCountryData.UpdateCountry(this._ID, this._CountryName);
+        }
         public static clsCountry Find(int ID)
         {
             string CountryName = "";
@@ -80,6 +85,7 @@ namespace Business_Layer
         {
             switch (Mode)
             {
+
                 case enMode.AddNew:
                     if(_AddNewCountry())
                     {
@@ -87,7 +93,9 @@ namespace Business_Layer
                         return true;
                     }
                     break;
+
                 case enMode.Update:
+                    return _UpdateCountry(); 
                     break;
                 default:
                     break;

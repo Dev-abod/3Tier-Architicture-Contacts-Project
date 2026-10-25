@@ -138,12 +138,29 @@ namespace Contacts_Project
                 Console.WriteLine("Not Country Exist");
         }
 
-        public static void AddNewContact()
+        public static void Update(int ID)
+        {
+            clsCountry country = clsCountry.Find(ID);
+
+            if(country != null)
+            {
+                country.CountryName = "sana'a";
+                if(country.Save())
+                {
+                    Console.WriteLine("Done Update");
+                }
+            }
+
+            
+
+        }
+
+        public static void AddNewCountry()
         {
             clsCountry country = new clsCountry();
 
             country.CountryName = "YEMEN";
-            
+
 
             if (country.Save())
             {
@@ -162,9 +179,8 @@ namespace Contacts_Project
         {
             clsPresentationCountry.Find(6);
 
-            //clsPresentationCountry.AddNewContact();
+            //clsPresentationCountry.Update(6);
 
-            //clsPresentationContact.AddNewContact();
             Console.ReadKey();
         }
 
