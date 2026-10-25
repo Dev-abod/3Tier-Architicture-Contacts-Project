@@ -14,12 +14,12 @@ namespace Business_Layer
             get { return _ID; }
             set { _ID = value; }
         }
-
         public string CountryName
         {
             get { return _CountryName; }
             set { _CountryName = value; }
         }
+
 
         public clsCountry()
         {

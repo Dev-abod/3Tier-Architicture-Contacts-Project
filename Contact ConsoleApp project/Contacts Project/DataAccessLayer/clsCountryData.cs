@@ -99,7 +99,7 @@ namespace DataAccessLayer
 
         public static bool IsExistCountry(string CountryName)
         {
-             bool isFound = false;
+            bool isFound = false;
 
             SqlConnection connection = new SqlConnection(ConnectionString.Connection);
             string query = "SELECT Found=1 FROM Countries WHERE CountryName = @CountryName";
@@ -125,6 +125,40 @@ namespace DataAccessLayer
             }
 
             return isFound;
+        }
+
+        public static int AddNewCountry(string CountryName)
+        {
+            int CountryID = -1;
+
+            SqlConnection connection = new SqlConnection(ConnectionString.Connection);
+
+            string query = @"INSERT INTO
+                             Countries(CountryName)
+                             VALUE(@CountryName);
+                             SELECT SCOPE_IDENTITY();";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CountryName", CountryName);
+
+            try
+            {
+                connection.Open();
+                object Result = command.ExecuteScalar();
+
+                if (Result != null && int.TryParse(Result.ToString(), out int insertedID))
+                    CountryID = insertedID;
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return CountryID;
         }
     }
 
