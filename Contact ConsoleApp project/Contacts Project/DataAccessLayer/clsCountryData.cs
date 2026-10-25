@@ -160,6 +160,36 @@ namespace DataAccessLayer
             }
             return CountryID;
         }
+
+        public static bool UpdateCountry(int ID , string CountryName)
+        {
+            int rowAffected = 0;
+            SqlConnection connection = new SqlConnection(ConnectionString.Connection);
+
+
+            string query = @"Update Value Countries
+                             SET CountryName = @CountryName
+                             WHERE CountryID = @CountryID";              
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CountryName", CountryName);
+            command.Parameters.AddWithValue("@CountryID", ID);
+
+
+            try
+            {
+                connection.Open();
+                rowAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return ( rowAffected > 0);
+        }
     }
 
 }
